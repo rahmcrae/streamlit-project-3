@@ -8,7 +8,7 @@ WORKDIR /app
 COPY . /app
 
 # Install the required packages
-RUN pip install streamlit
+RUN pip3 install -r requirements.txt
 
 # Set environment variables
 ENV LC_ALL=C.UTF-8
