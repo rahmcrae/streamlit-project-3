@@ -20,4 +20,3 @@ ENV LANG=C.UTF-8
 
 # Run the Streamlit app
 CMD streamlit run app.py
-
