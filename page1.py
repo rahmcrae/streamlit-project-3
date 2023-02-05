@@ -28,8 +28,7 @@ def show():
     
     if st.button("Submit"):
         # read data into dataframe
-        
-        df = pd.DataFrame(yf.download(ticker, start=start_date, end=date.today(), group_by='ticker')).reset_index()
+        df
         df.set_index('Date',inplace=True)
         df.index = df.index.date
         
