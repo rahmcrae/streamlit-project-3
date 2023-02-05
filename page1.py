@@ -8,9 +8,6 @@ import yfinance as yf
 # Import the dataframe of tickers from the tickers.py file
 from tickers import symbols
 
-#set variables
-pd.options.display.max_rows = None
-
 def show():
     st.write("This is Page 1")
     
@@ -37,4 +34,5 @@ def show():
         
         # plot a line chart & table of the selected data         
         st.line_chart(df[plot_data_select], y=plot_data_select)
+        pd.options.display.max_rows = None
         st.write(df.head())
