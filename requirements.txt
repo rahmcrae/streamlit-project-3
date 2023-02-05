@@ -4,3 +4,4 @@ pymongo
 requests
 pandas_datareader
 yfinance
+scikit-learn
