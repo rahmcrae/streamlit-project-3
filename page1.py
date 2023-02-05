@@ -13,7 +13,11 @@ import numpy as np
 from tickers import symbols
 
 def show():
-    st.write("This is Page 1")
+    st.write("""
+             ### This is Page 1
+             ## Single Select
+             
+             """)
     
     # select a ticker
     ticker = st.selectbox("select a ticker", symbols)
