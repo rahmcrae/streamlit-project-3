@@ -2,3 +2,4 @@ streamlit
 watchdog
 pymongo
 requests
+pandas_datareader
