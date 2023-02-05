@@ -8,6 +8,10 @@ import yfinance as yf
 # Import the dataframe of tickers from the tickers.py file
 from tickers import symbols
 
+#set variables
+pd.set_option('display.max_columns', None)
+pd.set_option('display.max_rows', None)
+
 def show():
     st.write("This is Page 1")
     
@@ -15,12 +19,14 @@ def show():
     ticker = st.selectbox("select a ticker", symbols)
     
     # Select a start date
-    start_date = st.date_input('select a start date', date(2011,1,1))
+    start_date = st.date_input('select a start date', date(2000,1,1))
     
     # Select the data to plot
-   
     plot_data = st.selectbox("select the data to plot", ["Open", "High", "Low", "Close","Volume"])
     plot_data_select = str(plot_data)
+    
+    # Select the # of rows for table
+    number = st.slider("select the number of records",  min_value=None, max_value=None, value=None, step=10,label_visibility="visible")
     
     
     if st.button("Submit"):
@@ -32,4 +38,4 @@ def show():
         
         # plot a line chart & table of the selected data         
         st.line_chart(df[plot_data_select], y=plot_data_select)
-        st.write(df.head(100))
+        st.write(df.head(number))
