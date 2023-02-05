@@ -35,4 +35,4 @@ def show():
         # plot a line chart & table of the selected data         
         st.line_chart(df[plot_data_select], y=plot_data_select)
         pd.options.display.max_rows = None
-        st.write(df.head())
+        st.write(df.head().options.display.max_rows = None)
