@@ -1,7 +1,7 @@
 import pandas as pd
 
-symbols = sorted(['ABMD','ATVI','ADBE','AMD','AGNC','AKAM','ALXN','ALGN',
-'ALKS','ALNY','GOOG','AABA','AMZN','DOX','UHAL','AMOV','AAL','AMGN','ADI','ANGI',
+symbols = sorted(['Z','ABMD','ATVI','ADBE','AMD','AGNC','AKAM','ALXN','ALGN',
+'ALKS','ALNY','GOOG','AMZN','DOX','UHAL','AMOV','AAL','AMGN','ADI','ANGI',
 'ANSS','AAPL','AMAT','ACGL','ARCC','ASML','AZPN','ATHN','TEAM','ADSK','ADP','BIDU',
 'OZRK','BIIB','BMRN','TECH','BLKB','BUFF','BLUE','BOKF','BKNG','BHF','AVGO','CHRW','CA',
 'CDNS','CZR','CG','CAVM','CBOE','CDK','CDW','CELG','CERN','CHTR','CHKP','CINF','CTAS',
@@ -23,7 +23,3 @@ symbols = sorted(['ABMD','ATVI','ADBE','AMD','AGNC','AKAM','ALXN','ALGN',
 'VOD','WBA','WB','WDC','WLTW','WDAY','WYNN','XEL','XLNX','YNDX','ZBRA','ZG','ZION',
 'VOO'
 ])
-
-#df = pd.DataFrame(list(zip(symbols)),columns=['symbols'])
-#print(nsdq.head(100))
-#print(df["symbols"])

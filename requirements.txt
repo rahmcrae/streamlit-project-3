@@ -3,3 +3,4 @@ watchdog
 pymongo
 requests
 pandas_datareader
+yfinance
