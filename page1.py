@@ -26,7 +26,7 @@ def show():
     plot_data_select = str(plot_data)
     
     # Select the # of rows for table
-    number = st.slider("select the number of records",  min_value=None, max_value=None, value=None, step=10,label_visibility="visible")
+    number = st.slider("select the number of records for table",  min_value=None, max_value=None, value=None, step=10,label_visibility="visible")
     
     
     if st.button("Submit"):
