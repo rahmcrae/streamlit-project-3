@@ -4,6 +4,10 @@ import pandas_datareader as pdr
 import os
 from datetime import *
 import yfinance as yf
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LinearRegression
+from sklearn.metrics import mean_squared_error
+import numpy as np
 
 # Import the dataframe of tickers from the tickers.py file
 from tickers import symbols
@@ -20,7 +24,6 @@ def show():
     # Select the data to plot
     plot_data = st.selectbox("select the data to plot", ["Open", "High", "Low", "Close","Volume"])
     plot_data_select = str(plot_data)
-    
     max_value = len(pd.DataFrame(yf.download(ticker, start=start_date, end=date.today(), group_by='ticker')).reset_index())
     # Select the # of rows for table
     number = st.slider("select the number of records for table",  min_value=None, max_value=max_value, value=None, step=10,label_visibility="visible")    
