@@ -23,12 +23,12 @@ def show():
     
     df = pd.DataFrame(yf.download(ticker, start=start_date, end=date.today(), group_by='ticker')).reset_index()
     # Select the # of rows for table
-    number = st.slider("select the number of records for table",  min_value=None, max_value=len(df), value=None, step=10,label_visibility="visible")
-    
+    number = st.slider("select the number of records for table",  min_value=None, max_value=len(df), value=None, step=10,label_visibility="visible")    
     
     if st.button("Submit"):
         # read data into dataframe
-        df
+        
+        df = pd.DataFrame(yf.download(ticker, start=start_date, end=date.today(), group_by='ticker')).reset_index()
         df.set_index('Date',inplace=True)
         df.index = df.index.date
         
