@@ -8,8 +8,7 @@ import datetime
 from tickers import symbols
 
 # set variables
-#api_key = os.getenv('TIINGO_API_KEY')
-api_key = '50eb18e4ac6e0b031d85584dbf365b1a4101f27a'
+api_key = os.getenv('TIINGO_API_KEY')
 api_provider = "tiingo"
 
 
