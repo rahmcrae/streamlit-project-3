@@ -19,15 +19,16 @@ def show():
     
     # Select the data to plot
    
-    plot_data = st.selectbox("Select the data to plot", ["Open", "High", "Low", "Close","Volume"])
+    plot_data = st.selectbox("select the data to plot", ["Open", "High", "Low", "Close","Volume"])
     plot_data_select = str(plot_data)
     
     
     if st.button("Submit"):
         # read data into dataframe
         
-        df = pd.DataFrame(yf.download(ticker, start=start_date, end=date.today(), group_by='ticker')).reset_index()       
+        df = pd.DataFrame(yf.download(ticker, start=start_date, end=date.today(), group_by='ticker')).reset_index()
         df.set_index('Date',inplace=True)
+        df.index = df.index.date
         
         # plot a line chart & table of the selected data         
         st.line_chart(df[plot_data_select], y=plot_data_select)
