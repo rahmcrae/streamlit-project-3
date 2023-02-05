@@ -21,9 +21,9 @@ def show():
     plot_data = st.selectbox("select the data to plot", ["Open", "High", "Low", "Close","Volume"])
     plot_data_select = str(plot_data)
     
-    df = pd.DataFrame(yf.download(ticker, start=start_date, end=date.today(), group_by='ticker')).reset_index()
+    max_value = len(pd.DataFrame(yf.download(ticker, start=start_date, end=date.today(), group_by='ticker')))
     # Select the # of rows for table
-    number = st.slider("select the number of records for table",  min_value=None, max_value=len(df), value=None, step=10,label_visibility="visible")    
+    number = st.slider("select the number of records for table",  min_value=None, max_value=max_value, value=None, step=10,label_visibility="visible")    
     
     if st.button("Submit"):
         # read data into dataframe
