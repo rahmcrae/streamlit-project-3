@@ -22,7 +22,7 @@ def show():
     plot_data_select = str(plot_data)
     
     # Select the # of rows for table
-    #number = st.slider("select the number of records for table",  min_value=None, max_value=10000000, value=None, step=10,label_visibility="visible")
+    number = st.slider("select the number of records for table",  min_value=None, max_value=len(df), value=None, step=10,label_visibility="visible")
     
     
     if st.button("Submit"):
@@ -34,5 +34,4 @@ def show():
         
         # plot a line chart & table of the selected data         
         st.line_chart(df[plot_data_select], y=plot_data_select)
-        pd.options.display.max_rows = None
-        st.write(df.head().options.display.max_rows = None)
+        st.write(df.head(number))
