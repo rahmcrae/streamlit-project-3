@@ -1,6 +1,6 @@
 import pandas as pd
 
-symbols = sorted(['Z','ABMD','ATVI','ADBE','AMD','AGNC','AKAM','ALXN','ALGN',
+symbols = sorted(set(['Z','ABMD','ATVI','ADBE','AMD','AGNC','AKAM','ALXN','ALGN',
 'ALKS','ALNY','GOOG','AMZN','DOX','UHAL','AMOV','AAL','AMGN','ADI','ANGI',
 'ANSS','AAPL','AMAT','ACGL','ARCC','ASML','AZPN','ATHN','TEAM','ADSK','ADP','BIDU',
 'OZRK','BIIB','BMRN','TECH','BLKB','BUFF','BLUE','BOKF','BKNG','BHF','AVGO','CHRW','CA',
@@ -22,4 +22,4 @@ symbols = sorted(['Z','ABMD','ATVI','ADBE','AMD','AGNC','AKAM','ALXN','ALGN',
 'TSCO','TRMB','TRIP','FOX','UBNT','ULTA','ULTI','VRSN','VRSK','VRTX','VIA','VIRT',
 'VOD','WBA','WB','WDC','WLTW','WDAY','WYNN','XEL','XLNX','YNDX','ZBRA','ZG','ZION',
 'VOO'
-])
+]))
