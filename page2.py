@@ -32,20 +32,21 @@ def show():
     plot_data_select = str(plot_data)
     
     if st.button("Submit"):
-        # read data into dataframe
         
+        # read data into dataframe        
         if not tickers:
             st.error("no ticker selected")
         else:    
             dfs = [yf.download(ticker, start=date_range_list[0], end=date_range_list[1], group_by='ticker') for ticker in tickers]
             df = pd.concat([df.assign(Ticker=ticker) for ticker, df in zip(tickers, dfs)])
             df = df.reset_index()
-            df.set_index('Date',inplace=True)
-            #df.index = df.index.date
+            df.set_index('Date',inplace=True)            
             df.index = [d.date() for d in df.index]
             
+            # pivot data so that each ticker will be displayed as different colors
+            df_pivot = df.pivot(columns='Ticker', values=plot_data_select)
+            
             # plot a line chart & table of the selected data
-            #st.line_chart(df.groupby("date")["Close"].mean())         
-            st.line_chart(df[plot_data_select], y=plot_data_select)
+            st.line_chart(df_pivot)            
             st.write(df.head(len(df)).sort_index(ascending=False))
             print(df.head(len(df)).sort_index(ascending=False))
