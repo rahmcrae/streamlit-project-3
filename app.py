@@ -7,8 +7,8 @@ import page3
 
 def main():
     st.write("""
-             # Financial Derivatives Analysis
-             ## By: Rah McRae
+             # 💸 Financial Derivatives Analysis 💸
+             ## ✨ By: Rah McRae ✨
              #### The purpose of this project is to analyze different financial derivatives over time. WIP Project still in it's infancy.
              """)        
     # Create a navigation menu
