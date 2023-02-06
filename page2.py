@@ -49,5 +49,5 @@ def show():
             
             # plot a line chart & table of the selected data
             st.area_chart(df_pivot)
-            st.write(df.head(len(df)).sort_index(ascending=False))
+            st.dataframe(df.sort_index(ascending=False))
             print(df.head(len(df)).sort_index(ascending=False))
