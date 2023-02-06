@@ -21,5 +21,5 @@ symbols = sorted(set(['Z','ABMD','ATVI','ADBE','AMD','AGNC','AKAM','ALXN','ALGN'
 'SBUX','STLD','SRCL','SIVB','SYMC','SNPS','TROW','TTWO','AMTD','TSLA','TXN','TMUS',
 'TSCO','TRMB','TRIP','FOX','UBNT','ULTA','ULTI','VRSN','VRSK','VRTX','VIA','VIRT',
 'VOD','WBA','WB','WDC','WLTW','WDAY','WYNN','XEL','XLNX','YNDX','ZBRA','ZG','ZION',
-'VOO'
+'VOO','META','CINC','CVNA','AUPH','SHC','SCLX','OPEN','RVNC','DADA','RIOT','W'
 ]))
