@@ -36,10 +36,17 @@ def show():
     if st.button("Submit"):
         # read data into dataframe
         
-        df = pd.DataFrame(yf.download(ticker, start=date_range_list[0], end=date_range_list[1], group_by='ticker')).reset_index()
-        df.set_index('Date',inplace=True)
-        df.index = df.index.date
-        
-        # plot a line chart & table of the selected data         
-        st.line_chart(df[plot_data_select], y=plot_data_select)
-        st.write(df.head(len(df)).sort_index(ascending=False))
+        try:
+            df = pd.DataFrame(yf.download(ticker, start=date_range_list[0], end=date_range_list[1], group_by='ticker')).reset_index()            
+                        
+        except ValueError:
+            st.error("Data doesn't exist for the selected date range.") 
+            
+        else:
+            df.set_index('Date',inplace=True)
+            #df.index = df.index.date
+            df.index = [d.date() for d in df.index]
+
+            # plot a line chart & table of the selected data         
+            st.line_chart(df[plot_data_select], y=plot_data_select)
+            st.write(df.head(len(df)).sort_index(ascending=False))

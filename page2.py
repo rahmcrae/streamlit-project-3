@@ -41,10 +41,11 @@ def show():
             df = pd.concat([df.assign(Ticker=ticker) for ticker, df in zip(tickers, dfs)])
             df = df.reset_index()
             df.set_index('Date',inplace=True)
-            df.index = df.index.date
+            #df.index = df.index.date
+            df.index = [d.date() for d in df.index]
             
             # plot a line chart & table of the selected data
             #st.line_chart(df.groupby("date")["Close"].mean())         
             st.line_chart(df[plot_data_select], y=plot_data_select)
             st.write(df.head(len(df)).sort_index(ascending=False))
-            st.write(print(df.head(len(df)).sort_index(ascending=False)))
+            print(df.head(len(df)).sort_index(ascending=False))
