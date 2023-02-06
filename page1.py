@@ -1,6 +1,5 @@
 import streamlit as st
 import pandas as pd
-import pandas_datareader as pdr
 import os
 from datetime import *
 import yfinance as yf
@@ -13,19 +12,22 @@ import numpy as np
 from tickers import symbols
 
 def show():
-    st.write("This is Page 1")
+    st.write("""
+             ### Single Select
+             """)
     
     # select a ticker
     ticker = st.selectbox("select a ticker", symbols)
     
-    # Select a start date
+    # select a start date
     start_date = st.date_input('select a start date', date(2000,1,1))
     
-    # Select the data to plot
+    # select the data to plot
     plot_data = st.selectbox("select the data to plot", ["Open", "High", "Low", "Close","Volume"])
     plot_data_select = str(plot_data)
+    
+    # select the # of rows for table
     max_value = len(pd.DataFrame(yf.download(ticker, start=start_date, end=date.today(), group_by='ticker')).reset_index())
-    # Select the # of rows for table
     number = st.slider("select the number of records for table",  min_value=None, max_value=max_value, value=None, step=10,label_visibility="visible")    
     
     if st.button("Submit"):
