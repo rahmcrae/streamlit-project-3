@@ -12,32 +12,34 @@ import numpy as np
 from tickers import symbols
 
 def show():
-    st.write("""
-             ### Single Select
+    st.write("""             
+             ### One Stock Analysis
              """)
+    
+    # select a start date
+    #start_date = st.date_input('select a start date', date(1900,1,1))
+    # min & max dates for slider
+    min_date = date(1900,1,1)
+    max_date = date.today()
+    
+    # date range slider    
+    date_range = st.slider('select date range', min_value=min_date, max_value=max_date, label_visibility="visible", value=(min_date,max_date))
+    date_range_list = list(date_range)          
     
     # select a ticker
     ticker = st.selectbox("select a ticker", symbols)
-    
-    # select a start date
-    start_date = st.date_input('select a start date', date(1900,1,1))
     
     # select the data to plot
     plot_data = st.selectbox("select the data to plot", ["Open", "High", "Low", "Close","Volume"])
     plot_data_select = str(plot_data)
     
-    # select the # of rows for table
-    max_value = len(pd.DataFrame(yf.download(ticker, start=start_date, end=date.today(), group_by='ticker')).reset_index())
-    number = st.slider("select the number of records for table",  min_value=1, max_value=max_value, value=None, step=10,label_visibility="visible")    
-    
-    
     if st.button("Submit"):
         # read data into dataframe
         
-        df = pd.DataFrame(yf.download(ticker, start=start_date, end=date.today(), group_by='ticker')).reset_index()
+        df = pd.DataFrame(yf.download(ticker, start=date_range_list[0], end=date_range_list[1], group_by='ticker')).reset_index()
         df.set_index('Date',inplace=True)
         df.index = df.index.date
         
         # plot a line chart & table of the selected data         
         st.line_chart(df[plot_data_select], y=plot_data_select)
-        st.write(df.head(number).sort_index(ascending=False))
+        st.write(df.head(len(df)).sort_index(ascending=False))

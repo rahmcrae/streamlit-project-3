@@ -13,7 +13,7 @@ from tickers import symbols
 
 def show():
     st.write("""
-             ### Multi- Select
+             ### Multi-Stock Analysis (Max 5)
              """)
     
     # min & max dates for slider

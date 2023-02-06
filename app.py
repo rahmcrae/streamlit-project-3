@@ -7,9 +7,9 @@ import page3
 
 def main():
     st.write("""
-             # Analysis Project
-             ### By: Rah McRae
-             The purpose of this is to analyze x,y,z over time.
+             # Financial Derivatives Analysis
+             ## By: Rah McRae
+             #### The purpose of this project is to analyze different financial derivatives over time. WIP Project still in it's infancy.
              """)        
     # Create a navigation menu
     menu = ["Page 1", "Page 2", "Page 3"]
