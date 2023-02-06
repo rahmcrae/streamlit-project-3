@@ -49,4 +49,5 @@ def show():
 
             # plot a line chart & table of the selected data         
             st.area_chart(df[plot_data_select], y=plot_data_select)
-            st.dataframe(df.sort_index(ascending=False))
+            st.dataframe(df.sort_index(ascending=False), use_container_width=True)
+            print(df.head(len(df)).sort_index(ascending=False))
