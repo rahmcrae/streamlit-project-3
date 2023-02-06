@@ -8,8 +8,8 @@ import page3
 def main():
     st.write("""
              # 💸 Financial Derivatives Analysis 💸
-             ## ✨ By: Rah McRae ✨
-             #### The purpose of this project is to analyze different financial derivatives over time. WIP Project still in it's infancy.
+             ## By: :red[Rah McRae]
+             #### The purpose of this project is to :red[_analyze different financial derivatives over time_]
              """)        
     # Create a navigation menu
     menu = ["Page 1", "Page 2", "Page 3"]

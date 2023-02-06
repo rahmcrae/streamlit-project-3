@@ -47,6 +47,6 @@ def show():
             df_pivot = df.pivot(columns='Ticker', values=plot_data_select)
             
             # plot a line chart & table of the selected data
-            st.line_chart(df_pivot)            
+            st.area_chart(df_pivot)            
             st.write(df.head(len(df)).sort_index(ascending=False))
             print(df.head(len(df)).sort_index(ascending=False))

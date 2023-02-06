@@ -48,5 +48,5 @@ def show():
             df.index = [d.date() for d in df.index]
 
             # plot a line chart & table of the selected data         
-            st.line_chart(df[plot_data_select], y=plot_data_select)
+            st.area_chart(df[plot_data_select], y=plot_data_select)
             st.write(df.head(len(df)).sort_index(ascending=False))
