@@ -7,6 +7,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
 from sklearn.metrics import mean_squared_error
 import numpy as np
+import altair as alt
 
 # Import the dataframe of tickers from the tickers.py file
 from tickers import symbols
@@ -47,6 +48,6 @@ def show():
             df_pivot = df.pivot(columns='Ticker', values=plot_data_select)
             
             # plot a line chart & table of the selected data
-            st.area_chart(df_pivot)            
+            st.area_chart(df_pivot)
             st.write(df.head(len(df)).sort_index(ascending=False))
             print(df.head(len(df)).sort_index(ascending=False))
