@@ -9,7 +9,7 @@ def main():
     st.write("""
              # 💸 Financial Derivatives Analysis 💸
              ## By: :red[Rah McRae]
-             #### The purpose of this is to :red[_analyze different financial derivatives over time_]
+             #### Purpose: :red[_to analyze different financial derivatives over time_]
              """)        
     # Create a navigation menu
     menu = ["Page 1", "Page 2", "Page 3"]
