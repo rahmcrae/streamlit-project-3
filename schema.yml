@@ -1,0 +1,22 @@
+sources:
+  - name: nasdaq.csv
+    description: A list of stock tickers from: https://www.nasdaq.com/market-activity/stocks/screener
+      columns:
+        - name: symbol
+          description: stock ticker
+          - name: name
+          description: name of ticker
+          - name: last_sale
+          description: last sale price $
+          - name: net_change
+          description: percentage point change in price
+          - name: percent_change
+          description: percent change in price
+          - name: market_cap
+          description: volume
+
+  - name: tickers.py
+    description: A list of stock tickers manually maintained
+      columns:
+        - name: symbols
+          description: stock ticker

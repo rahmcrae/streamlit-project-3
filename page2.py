@@ -49,5 +49,11 @@ def show():
             
             # plot a line chart & table of the selected data
             st.area_chart(df_pivot)
-            st.dataframe(df_pivot.sort_index(ascending=False), use_container_width=True)
+            #st.dataframe(df_pivot.sort_index(ascending=False), use_container_width=True)
+            
+            df_pivot['Year'] = [d.year for d in df_pivot.index]
+            df_agg = df_pivot.groupby('Year').agg('mean')
+            st.dataframe(df_agg.sort_index(ascending=False), use_container_width=True)
+            
             print(df.head(len(df)).sort_index(ascending=False))
+            print(df_agg.head(len(df_agg)).sort_index(ascending=False))
